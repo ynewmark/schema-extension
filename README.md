@@ -1,8 +1,8 @@
 <a href="https://extension.js.org" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Powered%20by%20%7C%20Extension.js-0065e6" alt="Powered by Extension.js" align="right" /></a>
 
-# schema-extension
+# Schema Explorer
 
-> Adds a sidebar panel to the browser built with shadcn/ui components.
+> Explore structured data across the web. View data in a useful sidebar.
 
 ## Commands
 
