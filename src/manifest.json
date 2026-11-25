@@ -1,8 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "manifest_version": 3,
   "chromium:manifest_version": 3,
   "firefox:manifest_version": 2,
   "version": "1.0.0",
+  "firefox:permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
   "firefox:browser_specific_settings": {
     "gecko": {
       "id": "{3c45a917-37f4-41bf-956a-702891c86052}",
@@ -13,8 +19,8 @@
       }
     }
   },
-  "name": "schema-extension",
-  "description": "Adds a sidebar panel to the browser built with shadcn/ui components.",
+  "name": "Schema Explorer",
+  "description": "Explore structured data across the web.",
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
@@ -30,7 +36,7 @@
       "64": "images/icon-64.png",
       "128": "images/icon-128.png"
     },
-    "default_title": "Open Extension.js Shadcn Sidebar"
+    "default_title": "Open Schema Explorer Sidebar"
   },
   "firefox:browser_action": {
     "default_icon": {
@@ -40,34 +46,34 @@
       "64": "images/icon-64.png",
       "128": "images/icon-128.png"
     },
-    "default_title": "Open Extension.js Shadcn Sidebar"
+    "default_title": "Open Schema Explorer Sidebar"
   },
   "chromium:side_panel": {
     "default_path": "sidebar/index.html",
-    "default_title": "Extension.js Shadcn Sidebar Panel"
+    "default_title": "Schema Explorer Sidebar"
   },
   "firefox:sidebar_action": {
     "default_panel": "sidebar/index.html",
-    "default_title": "Extension.js Shadcn Sidebar Panel",
-    "browser_style": false
+    "default_title": "Schema Explorer Sidebar",
+    "browser_style": false,
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "64": "images/icon-64.png",
+      "128": "images/icon-128.png"
+    }
   },
   "chromium:permissions": [
-    "sidePanel"
+    "sidePanel",
+    "scripting",
+    "activeTab",
+    "storage"
   ],
   "background": {
     "chromium:service_worker": "background.ts",
     "firefox:scripts": [
       "background.ts"
     ]
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "content/scripts.tsx"
-      ]
-    }
-  ]
+  }
 }

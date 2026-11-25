@@ -1,34 +1,20 @@
 # Store metadata
 
-Starter file generated from this template's manifest. STORE.md holds the
-listing material for the Chrome Web Store, Firefox Add-ons, Edge Add-ons and
-the Mac App Store. Every store asks for this material at submission time, so
-keep it current as the code changes instead of rewriting it at the end. A
-line marked TODO is a fact only the owner can supply: the file shows what is
-missing and never invents listing copy, and a value that still starts with
-TODO is skipped, not sent. Items a store takes only on its own dashboard
-(Chrome promo tiles and data-use answers, Edge logo, tiles and properties,
-Apple's App Privacy and age rating) stay by hand and are listed under each
-store below. The HTML comments carry each field's format and limits, and the
-readers ignore them.
-
 Last updated: 2026-11-19
 
 ## Listing
 
-- Name: schema-extension
+- Name: Schema Explorer
   <!-- The store title, 100 characters at most on every store. -->
-- Summary: Adds a sidebar panel built with shadcn/ui.
+- Summary: Explore structured data across the web.
   <!-- Chrome's summary, 132 characters at most. It doubles as the Safari
   subtitle only when it fits 30. -->
-- Subtitle: TODO a 30 character App Store subtitle
+- Subtitle: Explore data across the web
   <!-- App Store subtitle, 30 characters at most. Without it the Safari push
   leaves the field empty. -->
 - Description:
 
-  TODO two or three short paragraphs of user benefits. Describe what the
-  user sees and gains, not how the code works. Keep every paragraph indented
-  like this one so the readers take them as one field.
+  Explore structured data across the web. View data in a useful sidebar.
 
 - Category: TODO one per store, for example Productivity (Chrome Web Store,
   Firefox Add-ons, Edge Add-ons), Utilities (App Store)
@@ -81,7 +67,7 @@ Per store answer sheets, filled from the two lines above:
 
 ### Single purpose
 
-Adds a sidebar panel built with shadcn/ui.
+Explore structured data across the web.
 
 ### Permissions justification
 
@@ -91,10 +77,15 @@ ask them. A reason that still starts with TODO is not sent. "Needed for
 the extension to work" fails review on every store. -->
 
 - sidePanel: Renders the extension's main interface in the browser side
-  panel.
-- Content script match <all_urls>: The content script runs on the pages the
-  user visits to render the extension's on-page interface. Narrow this to
-  the specific sites your extension needs before submitting.
+  panel, which opens from the toolbar action.
+- activeTab: Gives temporary access to the active tab only after the user
+  invokes the extension from the toolbar, allowing its page to be read
+  without granting permanent access to websites.
+- scripting: Reads the active tab's HTML after the user invokes the toolbar
+  action, so the extension can extract and display structured data.
+- storage: Keeps the captured page data in session storage for the side panel
+  and saves pinned schema items in local storage across panel and browser
+  closes.
 
 Remote code: none. Every script ships inside the package, which is the
 answer to the remote code question on Chrome and Edge.

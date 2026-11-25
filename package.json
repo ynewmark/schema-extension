@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "schema-extension",
-  "description": "Adds a sidebar panel to the browser built with shadcn/ui components.",
+  "name": "Schema Explorer",
+  "description": "Explore structured data across the web.",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -22,12 +22,13 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "extension": "^4.1.41",
     "postcss": "^8.4.47",
+    "schema-dts": "^2.1.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.1.3",
     "tw-animate-css": "1.2.5",
-    "typescript": "7.0.2",
-    "extension": "^4.1.41"
+    "typescript": "7.0.2"
   },
   "scripts": {
     "dev": "extension dev",
