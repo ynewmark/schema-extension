@@ -148,6 +148,7 @@ export default function SidebarApp() {
   const visibleSchemas = schemas.filter((schema) =>
     matchesSelectedTypes(schema, selectedTypes)
   );
+  const hiddenSchemaCount = schemas.length - visibleSchemas.length;
 
   return (
     <main className="flex flex-col gap-4 p-4">
@@ -165,6 +166,12 @@ export default function SidebarApp() {
         selectedTypes={selectedTypes}
         onSelectedTypesChange={setSelectedTypes}
       />
+
+      {hiddenSchemaCount > 0 && (
+        <p className="text-sm text-muted-foreground">
+          {hiddenSchemaCount} item{hiddenSchemaCount === 1 ? '' : 's'} hidden by filters.
+        </p>
+      )}
 
       {error && <p role="alert">{error}</p>}
 
